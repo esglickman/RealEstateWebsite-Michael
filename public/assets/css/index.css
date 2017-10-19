@@ -1,0 +1,99 @@
+body {
+	margin:0;
+	border:0;
+	padding:0;
+}
+
+.jumbotron {
+	background-image: url('http://pix10.agoda.net/hotelImages/487/487165/487165_13111212020017383892.jpg?s=1024x768');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 600px;
+	padding-bottom: 185px;
+	padding-top: 0px;
+}
+
+
+nav.navbar.navbar-default {
+	background: transparent!important;
+	opacity: 0.5;
+	background-color: #DDE6F0 !important;
+	border-color: transparent!important;
+	color: #000!important;
+}
+
+nav, li, a {
+	color: #000!important;
+}
+
+.navButtons {
+	margin: 15px 0;
+	padding: 8px 0;	
+	margin-left: 12px;
+}
+
+.navButtons:hover {
+/*	border: solid;
+	border-color: #d4d4d4;*/
+	text-decoration: underline;
+
+}
+
+.remaxLogo {
+	height: 100px;
+}
+
+h1, h3, h4 {
+	color: #fff!important;
+	
+}
+
+#jumboText {
+	position: relative;
+	margin: 75px 0 0 -110px ;
+}
+
+#custom-search-input {
+    margin:0;
+    margin-top: 180px;
+    padding: 0;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color:#D9230F;
+}
+
+.search-query:focus + button {
+    z-index: 3;   
+}
+
+#greyBackground {
+	height: 600px;
+	background-image: url('../images/greyBackground.jpg');
+	margin-top: -30px;
+}

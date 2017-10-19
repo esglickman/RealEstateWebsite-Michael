@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Real Estate</title>
+    <!-- bootstap html and cc elemets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--links my css page -->
+    <link rel="stylesheet" type="text/css" href="public/assets/css/index.css">
+    <!--Allows me to use JQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!-- Allows me to use Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+
+	<div class="jumbotron">
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+	<!-- PUT A LOGO HERE -->
+				<img class='remaxLogo' src="public/assets/images/remaxlogo.gif">
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right">
+		        <li class="navButtons"><a href="#">Home</a></li>
+		        <li class="navButtons"><a href="#">About</a></li>
+		        <li class="navButtons"><a href="#">Featured</a></li>
+		        <li class="navButtons"><a href="#">Contact Me</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-2"></div>
+
+				<div class="col-sm-8" id="jumboText">
+					<h1>Michael Glickman</h1>
+					<h4>Your Premium Real Estate Expert</h4>
+				</div>
+
+				<div class="col-sm-2"></div>
+				
+			</div>
+
+			<div class="row">
+
+				<div class="col-sm-1"></div>
+
+				<div class="col-sm-10">
+					
+				    <div id="custom-search-input">
+				    	<h3>Start your home search now</h3>
+	                    <div class="input-group col-md-12">
+	                        <input id='mapSearch' type="text" class="  search-query form-control" placeholder="Search" />
+	                        <span class="input-group-btn">
+	                            <button class="btn btn-danger" type="button">
+	                                <span class=" glyphicon glyphicon-search"></span>
+	                            </button>
+	                        </span>
+	                    </div>
+	                </div>
+
+				</div>
+
+				<div class="col-sm-1"></div>
+
+			</div>
+		</div>	
+	</div>
+
+	<div id="greyBackground">
+		<div class="container">
+			
+		</div>
+	</div>	
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFG0KWQFQOk4N8xdGVsuucGBKmKDjJPus&libraries=places">
+</script>
+<script type="text/javascript">
+	var autocomplete = new google.maps.places.SearchBox(document.getElementById('mapSearch'));
+</script>
+</body>
+</html>
