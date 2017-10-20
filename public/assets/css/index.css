@@ -4,6 +4,10 @@ body {
 	padding:0;
 }
 
+p {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
 .jumbotron {
 	background-image: url('http://pix10.agoda.net/hotelImages/487/487165/487165_13111212020017383892.jpg?s=1024x768');
 	background-size: 100% 100%;
@@ -13,6 +17,15 @@ body {
 	padding-top: 0px;
 }
 
+.jumbotronContact {
+	background-image: url('../images/contactHeader.jpg');
+	background-size: 100% 143%;
+	background-repeat: no-repeat;
+	height: 200px;
+	padding-bottom: 185px;
+	padding-top: 0px;
+
+}
 
 nav.navbar.navbar-default {
 	background: transparent!important;
@@ -45,17 +58,18 @@ nav, li, a {
 
 h1, h3, h4 {
 	color: #fff!important;
-	
+	text-shadow: 2px 2px #000;
 }
+
 
 #jumboText {
 	position: relative;
-	margin: 75px 0 0 -110px ;
+	margin: 30px 0 0 -110px ;
 }
 
 #custom-search-input {
     margin:0;
-    margin-top: 180px;
+    margin-top: 200px;
     padding: 0;
 }
 
@@ -96,4 +110,19 @@ h1, h3, h4 {
 	height: 600px;
 	background-image: url('../images/greyBackground.jpg');
 	margin-top: -30px;
+}
+
+.headPic {
+	height: 160px;
+	width: 135px;
+	margin-top: 30px;
+}
+
+.aboutMe {
+	margin-top: 30px;
+}
+
+#whiteBackground {
+	background-color: #fff!important;
+	/*margin-top: 20px;*/
 }
