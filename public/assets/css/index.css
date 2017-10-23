@@ -112,6 +112,12 @@ h1, h3, h4 {
 	margin-top: -30px;
 }
 
+#paperBackground {
+	height: 530px;
+	background-color: #F2F2F2;
+	margin-top: -30px;
+}
+
 .headPic {
 	height: 160px;
 	width: 135px;
