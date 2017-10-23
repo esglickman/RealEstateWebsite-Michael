@@ -4,7 +4,7 @@ body {
 	padding:0;
 }
 
-p {
+p, legend, label, .footertext {
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -107,7 +107,7 @@ h1, h3, h4 {
 }
 
 #greyBackground {
-	height: 600px;
+	height: 530px;
 	background-image: url('../images/greyBackground.jpg');
 	margin-top: -30px;
 }
@@ -124,5 +124,26 @@ h1, h3, h4 {
 
 #whiteBackground {
 	background-color: #fff!important;
-	/*margin-top: 20px;*/
+	margin-top: 35px;
 }
+
+#singlebutton {
+	position: relative;
+	float: right;
+	margin-top: 13px;
+}
+
+#footer {
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 280px;
+  background: 
+  /* color overlay */ 
+    linear-gradient(
+      rgba(222, 222, 222, 1.45), 
+      rgba(0, 0, 0, 0.45)
+    ),
+    /* image to overlay */
+    url(http://images.cdn.fotopedia.com/_avPIZmqM3w-7z161LH_268-hd.jpg);
+}
+
