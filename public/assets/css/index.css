@@ -202,3 +202,24 @@ h1, h3, h4 {
 .featureText {
 	color: #fff;
 }
+
+.featuredTitle {
+	color: #000!important;
+	text-shadow: 1px 1px #333;
+	text-align: center;
+	font-family: 'Pinyon Script', cursive;
+	font-size: 60px;
+}
+
+.box {
+	border: solid #fff;
+	background-color: #f3f3f3;
+	margin-top: 60px;
+}
+
+.boxImage{
+	position: relative;
+	margin: 0 auto;
+	height: 235px;
+	width: 356px;
+}
