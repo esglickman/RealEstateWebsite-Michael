@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>Real Estate - Featured Page</title>
+	<title>Real Estate - Contact Page</title>
     <!-- bootstap html and cc elemets-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!--links my css page -->
@@ -13,12 +13,46 @@
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <!-- Allows me to use Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
 
 </head>
 <body>
+<?php
+if(isset($_POST["submit1"])){
+	$link=mysqli_connect("localhost","root","", "finalProject");
+
+
+	mysqli_select_db($link,"finalProject");
+	$count=0;
+	$res=mysqli_query($link, "SELECT * from contactForm where email='$_POST[email]'");
+	$count=mysqli_num_rows($res);
+
+	echo $count;
+
+	if($count>0){
+?>
+	<script type="text/javascript">
+		alert("This email already exists, please choose another");
+	</script>
+
+<?php
+	} else {
+		
+		mysqli_query($link, "INSERT into contactForm values('','$_POST[firstName]','$_POST[lastName]','$_POST[email]', '$_POST[phone]','$_POST[message]')");
+?>
+	<script type="text/javascript">
+		alert("Message sent successfully.");
+		// window.location="login.php";
+
+	</script>
+<?php
+	}
+}
+?>
+
+
 
 	<div class="jumbotronContact">
 		<nav class="navbar navbar-default">
@@ -34,105 +68,87 @@
 		      <ul class="nav navbar-nav navbar-right">
 		        <li class="navButtons"><a href="../index.html">Home</a></li>
 		        <li class="navButtons"><a href="about.html">About</a></li>
-		        <li class="navButtons"><a href="feautured.html">Featured</a></li>
+		        <li class="navButtons"><a href="featured.html">Featured</a></li>
 		        <li class="navButtons"><a href="contact.php">Contact Me</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
+
+
 	</div>
 <br>
-<h1 class="featuredTitle">Featured Listings</h1>
-<div id="mainFeature" class="container">
-  <div class="mainHouse">
-    <h1>Luxury Featured Home</h1>
-      <h4>Location: Atlantic Avenue</h4>
-      <p class="featureText">6 bedroom/ 4 bathroom</p>
-      <p class="featureText">10 minutes from Atlantic Ocean</p>
-      <p class="featureText">Price: $1,300,000</p>
-  </div>
-</div>
+	<div id="greyBackground">
+		<div class="container">
 
-<div id="paperBackground">
-	<div class="container">
-		<div class="row">
+			<div class="row"></div>
 
-			<div class="col-md-4">
-				<div class="box">
-          <img class='boxImage' src="assets/images/boxHome2.jpg">
-          <h4>Location: Boca Raton</h4>
-          <p>4 bedroom/ 3 bathroom</p>
-          <p>Community Pool & Gym</p>
-          <p>Price: $680,000</p>
-        </div>
+			<div class="row">
+				
+				<div class="col-sm-1"></div>
+				
+				<div class="col-sm-10" id="whiteBackground">
+					
+					<form class="form-horizontal" name="form1" action="" method="post">
+						<fieldset>
+
+						<!-- Form Name -->
+							<legend>Contact Me</legend>
+
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="textinput">First Name</label>  
+							  <div class="col-md-4">
+							  <input id="textinput" name="firstName" type="text" placeholder="First Name" class="form-control input-md"> 
+							  </div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="textinput">Last Name</label>  
+							  <div class="col-md-4">
+							  <input id="textinput" name="lastName" type="text" placeholder="Last Name" class="form-control input-md">  
+							  </div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="textinput">Email Address</label>  
+							  <div class="col-md-4">
+							  <input id="textinput" name="email" type="email" placeholder="Email" class="form-control input-md" required pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"> 
+							  </div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="textinput">Phone Number</label>  
+							  <div class="col-md-4">
+							  <input id="textinput" name="phone" type="text" placeholder="Phone Number" class="form-control input-md"> 
+							  </div>
+							</div>
+
+							<!-- Textarea -->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="textarea">Message</label>
+							  <div class="col-md-4">                     
+							    <textarea class="form-control" id="textarea" name="message"></textarea>
+
+								    <button id="singlebutton" name="submit1" class="btn btn-primary">Submit</button>
+								  
+							  </div>
+							</div>
+
+						</fieldset>
+					</form>
+
+				</div>
+
+				<div class="col-sm-1"></div>
+
 			</div>
-
-			<div class="col-md-4">
-				<!-- featured home -->
-        <div class="box">
-          <img class='boxImage' src="assets/images/boxHome.jpg">
-          <h4>Location: Boca Raton</h4>
-          <p>3 bedroom/ 2 bathroom</p>
-          <p>On the Intercoastal</p>
-          <p>Price: $610,000</p>
-        </div>
-			</div>
-
-			<div class="col-md-4">
-				<!-- featured home -->
-        <div class="box">
-          <img class='boxImage' src="assets/images/boxHome3.jpg">
-          <h4>Location: Jupiter</h4>
-          <p>4 bedroom/ 3 1/2 bathroom</p>
-          <p>Family Oriented Gated Community</p>
-          <p>Price: $865,000</p>
-        </div>
-			</div>
-
-
+			
 		</div>
-	</div>
-</div>	
-
-<div id="paperBackground">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-4">
-        <div class="box">
-          <img class='boxImage' src="assets/images/boxHome4.jpg">
-          <h4>Location: Boyton Beach</h4>
-          <p>4 bedroom/ 3 1/2 bathroom</p>
-          <p>Community Park & Dog Park</p>
-          <p>Price: $620,000</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <!-- featured home -->
-        <div class="box">
-          <img class='boxImage' src="assets/images/boxHome5.jpg">
-          <h4>Location: Boca Raton</h4>
-          <p>4 bedroom/ 3 bathroom</p>
-          <p>Pool & Large Backyard</p>
-          <p>Price: $715,000</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <!-- featured home -->
-        <div class="box">
-          <img class='boxImage' src="assets/images/boxHome6.jpg">
-          <h4>Location: Delray Beach</h4>
-          <p>5 bedroom/ 3 bathroom</p>
-          <p>Gated Community & Clubhouse</p>
-          <p>Price: $975,000</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>  
+	</div>	
 
 <!-- footer -->
 
